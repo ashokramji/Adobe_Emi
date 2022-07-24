@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Adobe_Emi
+ *
+ * @category  XML
+ * @package   Adobe\Emi
+ * @copyright Copyright © 2022 Adobe. All rights reserved.
+ * @link      https://www.adobe.com/
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <emi>
+            <general>
+                <enable>1</enable>
+                <emi>
+                    <item1>
+                        <interest>16</interest>
+                        <tenure>3</tenure>
+                        <gender>1</gender>
+                    </item1>
+                    <item2>
+                        <interest>12</interest>
+                        <tenure>6</tenure>
+                        <gender>1</gender>
+                    </item2>
+                    <item3>
+                        <interest>10</interest>
+                        <tenure>6</tenure>
+                        <gender>2</gender>
+                    </item3>
+                    <item4>
+                        <interest>10</interest>
+                        <tenure>12</tenure>
+                        <gender>1</gender>
+                    </item4>
+                </emi>
+            </general>
+        </emi>
+    </default>
+</config>

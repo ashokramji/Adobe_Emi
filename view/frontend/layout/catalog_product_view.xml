@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Adobe_Emi
+ *
+ * @category  XML
+ * @package   Adobe\Emi
+ * @copyright Copyright © 2022 Adobe. All rights reserved.
+ * @link      https://www.adobe.com/
+ **/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <referenceContainer name="product.info.main">
+        <block name="adobe.emi" template="Adobe_Emi::emi.phtml" after="product.info.price">
+            <arguments>
+                <argument name="view_model" xsi:type="object">Adobe\Emi\ViewModel\EmiModel</argument>
+            </arguments>
+        </block>        
+    </referenceContainer>
+    </body>
+</page>

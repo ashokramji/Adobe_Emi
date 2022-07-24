@@ -1,0 +1,22 @@
+{
+    "name": "adobe/module-emi",
+    "description": "EMI display extension",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "version": "1.0.0",
+    "require": {
+        "php": "~7.3.0||~7.4.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Adobe\\Emi\\": ""
+        }
+    }
+}
+
