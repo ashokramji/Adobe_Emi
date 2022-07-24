@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Adobe_Emi
+ *
+ * @category  XML
+ * @package   Adobe\Emi
+ * @copyright Copyright © 2022 Adobe. All rights reserved.
+ * @link      https://www.adobe.com/
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="adobe" translate="label" sortOrder="10">
+            <label>Adobe</label>
+        </tab>
+        <section id="emi" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>EMI</label>
+            <tab>adobe</tab>
+            <resource>Adobe_Emi::emi_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable the module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="emi" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Options</label>
+                    <frontend_model>Adobe\Emi\Block\Adminhtml\Form\Field\EmiOptions</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

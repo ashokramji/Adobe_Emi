@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Adobe_Emi
+ *
+ * @category  XML
+ * @package   Adobe\Emi
+ * @copyright Copyright © 2022 Adobe. All rights reserved.
+ * @link      https://www.adobe.com/
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Adobe_Emi" >
+        <sequence>
+            <module name="Magento_Catalog"/>
+        </sequence>
+    </module>
+</config>

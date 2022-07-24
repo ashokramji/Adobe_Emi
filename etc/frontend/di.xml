@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Adobe_Emi
+ *
+ * @category  XML
+ * @package   Adobe\Emi
+ * @copyright Copyright © 2022 Adobe. All rights reserved.
+ * @link      https://www.adobe.com/
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\Action\AbstractAction">
+    	<plugin name="customer-session-data-to-context" type="Adobe\Emi\Plugin\CustomerSessionContext"/>
+    </type>
+</config>

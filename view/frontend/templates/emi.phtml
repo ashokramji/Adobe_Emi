@@ -1,0 +1,71 @@
+<?php
+/**
+ * Adobe_Emi
+ *
+ * @category  PHTML
+ * @package   Adobe\Emi
+ * @copyright Copyright © 2022 Adobe. All rights reserved.
+ * @link      https://www.adobe.com/
+ **/
+/** @var $viewModel \Adobe\Emi\ViewModel\EmiModel */
+
+$viewModel = $block->getViewModel();
+$isShowEmiBlock = $viewModel->getIsShowEmiBlock();
+$emiOptionArray = $viewModel->getEmiArray();
+$minEmiAmount = $viewModel->getMinEmiAmount();
+
+?>
+<?php if ($isShowEmiBlock && !empty($emiOptionArray)):?>
+<div data-block="dropdown" class="minicart-wrapper" style="float: left;">
+    <p style="float:left; padding-right: 10px;">
+        <?= /* @noEscape */ 'Emi starts at ' . $minEmiAmount . '. No Cost EMI available'; ?> 
+    </p>
+    <button type="button" class="action" data-trigger="trigger">
+        <span data-bind="i18n: 'EMI options'"></span>
+    </button>
+</div>
+<div class="block block-minicart"
+     data-mage-init='{
+        "dropdownDialog": {
+            "appendTo": "[data-block=dropdown]",
+            "triggerTarget":"[data-trigger=trigger]",
+            "timeout": 2000,
+            "closeOnMouseLeave": false,
+            "closeOnEscape": true,
+            "autoOpen": false,
+            "triggerClass": "active",
+            "parentClass": "active",
+            "buttons": []
+        }
+     }'>
+    <div id="minicart-content-wrapper">
+        <div class="table-wrapper">
+            <table class="data table table-order-items" id="emi-table">
+                <thead>
+                <tr>
+                    <th scope="col" class="col emi"><?= /* @noEscape */ __('EMI Plan') ?></th>
+                    <th scope="col" class="col interest"><?= /* @noEscape */ __('Interest(pa)') ?></th>
+                    <th scope="col" class="col cost"><?= /* @noEscape */ __('Total cost') ?></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach ($emiOptionArray as $item): ?>
+                <tr>
+                    <td data-th="<?= $block->escapeHtml(__('EMI Plan')) ?>" class="col emi">
+                        <?= /* @noEscape */ $item['monthlyEmi'] .' x '. $item['tenure'] . 'm' ?>
+                    </td>
+                    <td data-th="<?= $block->escapeHtml(__('Interest(pa)')) ?>" class="col interest">
+                        <?= /* @noEscape */ $item['totalInterest'] ?>
+                    </td>
+                    <td data-th="<?= $block->escapeHtml(__('Total cost')) ?>" class="col cost">
+                        <?= /* @noEscape */ $item['totalAmount'] ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
